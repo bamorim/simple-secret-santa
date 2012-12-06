@@ -2,6 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     excon (0.15.5)
+    haml (3.1.7)
     json (1.7.5)
     mandrill-api (1.0.10)
       excon (~> 0.15.4)
@@ -19,5 +20,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  haml
   mandrill-api
   sinatra
