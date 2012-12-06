@@ -11,6 +11,7 @@ end
 post '/send' do
   params.symbolize_keys!
   ppl = People.new(params[:people])
+  ppl.title = params[:title]
   if ppl.send_emails
     "Emails sent! :)"
   else

@@ -29,6 +29,8 @@ class Person
 end
 
 class People < Array
+  attr_accessor :title
+
   def initialize(array=[])
     super
     self.shuffle!
@@ -45,10 +47,10 @@ class People < Array
     emails = []
     self.each_with_index do |person, index|
       config = {
-        html: "You have to give a gift to: #{self[index+1].name}", 
+        html: "You have to give a gift to: #{self[index+1].name}",
         from_email: "santa@pytera.com",
         from_name: "Secret Santa",
-        subject: "Your friend in Secret Santa",
+        subject: "SecretSanta - #{title}",
         to: [
           {email:person.email, name:person.name}
         ],

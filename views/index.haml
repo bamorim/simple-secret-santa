@@ -27,6 +27,10 @@
           .brand SimpleSecretSanta
     #main.container
       %form.form-horizontal{action:"/send", method:"post"}
+        .control-group
+          %label.control-label Title
+          .controls
+            %input{type:"text", name:"title", placeholder:"Title for your event"}
         .person.control-group
           %label.control-label Person 1
           .controls
