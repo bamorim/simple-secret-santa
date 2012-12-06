@@ -1,0 +1,39 @@
+!!!
+%html
+  %head
+    %title SSS - Simple Secret Santa
+    %link{rel:"stylesheet", href:"//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css"}
+    %link{rel:"stylesheet", href:"/css/application.css"}
+
+    %script{type:"text/javascript", src:"https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"}
+    %script{type:"text/javascript", src:"http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"}
+    %script{type:"text/javascript", src:"//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"}
+
+    %script{type:"text/javascript", src:"/js/application.js"}
+
+    %script#person_template{type:"text/x-jquery-tmp"}
+      .person.control-group
+        %label.control-label Person ${num}
+        .controls
+          %input{type:"text", name:"people[][name]", placeholder:"Name"}
+          %input{type:"text", name:"people[][email]", placeholder:"Email"}
+
+  %body
+    %a{:href => "https://github.com/bamorim/simple-secret-santa"}
+      %img{:alt => "Fork me on GitHub", :src => "https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png", :style => "position: absolute; top: 0; right: 0; border: 0; z-index: 9999"}
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          .brand SimpleSecretSanta
+    #main.container
+      %form.form-horizontal{action:"/send", method:"post"}
+        .person.control-group
+          %label.control-label Person 1
+          .controls
+            %input{type:"text", name:"people[][name]", placeholder:"Name"}
+            %input{type:"text", name:"people[][email]", placeholder:"Email"}
+        .control-group
+          .controls
+            %a.btn.add-more Add More
+        .form-actions
+          %input.btn.btn-primary.btn-large{type:"submit", value:"Send Emails!"}
